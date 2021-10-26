@@ -1,0 +1,14 @@
+#Ignorar carpeta de entorno virtalenv (Entorno) y demas :V
+Entorno
+app/static/node_modules
+app/static/package-lock.json
+__pycache__
+app/__pycache__
+app/Autenticacion/__pycache__
+app/Administrador/__pycache__
+app/Estudiante/__pycache__
+app/users/__pycache__
+app/Docente/__pycache__
+
+
+

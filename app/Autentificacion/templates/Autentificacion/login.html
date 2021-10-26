@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSS NORMAL-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/CssLogin.css' ) }}">
+    <!--CSS BootStrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>PROYECTO 8 | IMPERIUM</title>
+
+    <body>
+
+        <div class="login-box">
+            <img src="/../static/img/UN2.gif" class="avatar" alt="Avatar Image">
+            <!-- <img src="img/UN2.gif" class="avatar" alt="Avatar Image"> -->
+            <br>
+            <h1>Iniciar Sesión</h1>
+            {% import 'bootstrap/wtf.html' as wtf %} {% block content %} {{ wtf.quick_form(login_form, button_map={'submit': 'primary'}) }} {% endblock %}
+        </div>
+        <script src="{{url_for('static', filename='js/LoginScript.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='node_modules/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/mensajes.js') }}"></script>
+        {% with messages = get_flashed_messages(with_categories=True) %} {% if messages %} {% for category, message in messages %}
+        <script>
+            showMessageAlert("{{category}}", "{{message}}");
+        </script>
+        {% endfor %} {% endif %} {% endwith %}
+    </body>
+
+</html>
