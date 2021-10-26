@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--CSS NORMAL-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/CssLogin.css' ) }}">
+
     <!--CSS BootStrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/CssLogin.css' ) }}">
     <title>PROYECTO 8 | IMPERIUM</title>
 
     <body>
@@ -22,7 +22,9 @@
             <!-- <img src="img/UN2.gif" class="avatar" alt="Avatar Image"> -->
             <br>
             <h1>Iniciar Sesión</h1>
-            {% import 'bootstrap/wtf.html' as wtf %} {% block content %} {{ wtf.quick_form(login_form, button_map={'submit': 'primary'}) }} {% endblock %}
+            <div class="prueba"> {% import 'bootstrap/wtf.html' as wtf %} {% block content %} {{ wtf.quick_form(login_form, button_map={'submit': 'primary'}) }} {% endblock %}
+            </div>
+            <a href="#">Olvido la contraseña?</a><br>
         </div>
         <script src="{{url_for('static', filename='js/LoginScript.js')}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -1,0 +1,57 @@
+{% extends 'layoutS.html' %} {% block title %} {{ super() }} Novedades {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %}
+<link rel="stylesheet" href="/static/css/CssNovedades.CSS">
+<!--<link rel="stylesheet" href="/static/css/iconosnotificacion.css">-->
+
+<h1>
+    <a href="#">
+        <i class="bi bi-bell"></i>
+        <span>Notificaciones</span>
+    </a>
+
+</h1>
+<div class="notificacion">
+    <hr>
+
+    <div id="revisar" style="width: 1002px;" class="btn btn-secundary">
+        <h4>
+            <a href="#">
+                <i class="bi bi-check2-circle"></i>
+                <span>Calificado Trabajo 2 Ciencias</span>
+            </a>
+        </h4>
+    </div>
+    <hr>
+
+
+    <div id="revisar" style="width: 1002px;" class="btn btn-secundary">
+        <h4>
+            <a href="#">
+                <i class="bi bi-check2-circle"></i>
+                <span>Calificado Trabajo 1 Ciencias</span>
+            </a>
+        </h4>
+    </div>
+    <hr>
+
+
+    <div id="revisar" style="width: 1002px;" class="btn btn-secundary">
+        <h4>
+            <a href="#">
+                <i class="bi bi-check2-circle"></i>
+                <span>Calificado Trabajo 1 Literatura</span>
+            </a>
+        </h4>
+    </div>
+    <hr>
+
+
+    <div id="revisar" style="width: 1002px;" class="btn btn-secundary">
+        <strong class="mb-1"></strong>
+        <h4>
+            <a href="#">
+                <i class="bi bi-chat-square-text"></i>
+                <span>Docente Javier ha comentado en Trabajo 2 Ciencias</span>
+            </a>
+        </h4>
+    </div>
+    <hr> {% endblock %} {% endblock %}

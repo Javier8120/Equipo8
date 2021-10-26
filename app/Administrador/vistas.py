@@ -12,7 +12,10 @@ from app.servicios import get_user_by_username, registro_usuarios
 def Inicio():
     return render('Administrador/Inicio.html')
 
-
+@Administrador.route('/perfil', methods = ['GET', 'POST'])
+@login_required
+def perfil():
+    return render('Administrador/perfil.html')
 
 @Administrador.route('/CrearUsuarios', methods=['GET', 'POST'])
 @login_required
@@ -50,6 +53,34 @@ def CrearUsuarios():
             
 
     return render('Administrador/CrearUsuarios.html', **context)
+
+
+
+@Administrador.route('VerUsuarios', methods = ['GET', 'POST'])
+@login_required
+def VerUsuarios():
+    return render('Administrador/Gcursos.html')
+
+@Administrador.route('/GestionCursos', methods = ['GET', 'POST'])
+@login_required
+def Gcursos():
+    return render('Administrador/Gcursos.html')
+
+@Administrador.route('/CAsignatura', methods = ['GET', 'POST'])
+@login_required
+def CAsignatura():
+    return render('Administrador/CAsignatura.html')
+
+@Administrador.route('/calendario', methods = ['GET', 'POST'])
+@login_required
+def calendario():
+    return render('Administrador/calendario.html')
+
+@Administrador.route('/novedades', methods = ['GET', 'POST'])
+@login_required
+def novedades():
+    return render('Administrador/novedades.html')
+
 
 
 @Administrador.route('/CerrarSesion')

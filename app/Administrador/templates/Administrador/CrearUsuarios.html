@@ -1,9 +1,2 @@
- {% extends 'layoutS.html' %} {% import 'bootstrap/wtf.html' as wtf %} {% block contenido %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/administrador.css' ) }}">
-
-<section class=section>
-    <div class=cajaPrincipal>
-        {% block content %} {{ wtf.quick_form(register_form, button_map={'submit': 'info'}) }} {% endblock %}
-    </div>
-</section>
-{% endblock %}
+{% extends 'layoutS.html' %}{% block title %} {{ super() }} Create Users {% endblock %} {% block style %} {{ super() }} {% endblock %}{% import 'bootstrap/wtf.html' as wtf %} {% block contenido %} {% block contenido2 %} {% block content %} {{ wtf.quick_form(register_form,
+button_map={'submit': 'info'}) }} {% endblock %} {% endblock %} {% endblock %}

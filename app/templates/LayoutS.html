@@ -13,8 +13,8 @@
     <!--Css BootStrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Iconos BoootStrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> {%block style%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/administrador.css' ) }}">{% endblock %}
 
 
     <title>
@@ -23,18 +23,17 @@
 </head>
 
 <body>
-
     <div>
         <header class="header">
             <div class="container">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a href="/Administrador/novedades" class=icon-campana>
+                        <a href="novedades" class=icon-campana>
                             <i class="bi bi-bell-fill"></i>
                         </a>
                     </li>
                     <li class=nav-item>
-                        <a>{{session["usuario"]}}</a>
+                        <a>{{session["username"]}}</a>
                     </li>
                     <li class=nav-item>
                         <a>
@@ -44,31 +43,26 @@
                 </ul>
         </header>
         </div>
-        {% block contenido %} {% block content %}{% endblock %} {% endblock %}
-        <!--	--------------->
-
+        <section class=section>
+            <div class=cajaPrincipal>
+                {% block contenido %} {% block contenido2 %} {% block content %}{% endblock %} {% endblock %} {% endblock %}
+                <!--	--------------->
+            </div>
+        </section>
         <div class="contenedor-menu">
             <div class="conte-menu text-white">
                 <nav>
-                    <a>
+                    <a href="Inicio">
                         <i class="bi bi-bullseye"></i>
                         <span>Admnistrador</span>
                     </a>
                     <hr>
                     <ul class="nav nav-pills">
                         <li>
-                            <a title="Perfil" href="/Administrador/PerfilS">
+                            <a title="Perfil" href="perfil">
                                 <i class="bi bi-people-fill"></i>
                                 <span>Area Personal</span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="/Administrador/GestiondeCursos">
-                                <i class="bi bi-journal-text"></i>
-                                <span>Gestion De Cursos</span>
-                            </a>
-                        </li>
-                        <li>
                             <li class="mb_1">
                                 <a title="Desplegable" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tarea-collapse" aria-expanded="false">
                                     <i class="bi bi-journal-text"></i>
@@ -78,25 +72,34 @@
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                         <li><a class="dropdown-item" href="CrearUsuarios">Crear Usuarios</a></li>
                                         <!--Creando y asgignando roles-->
-                                        <li><a class="dropdown-item" href="/Administrador/VisualizarUsuarios"> Visualizar Usuarios</a></li>
+                                        <li><a class="dropdown-item" href="VerUsuarios"> Visualizar Usuarios</a></li>
                                         <!--Ver/Editar/Eliminar-->
                                     </ul>
                                 </div>
                             </li>
+                        </li>
+                        <li>
+                            <a href="GestionCursos">
+                                <i class="bi bi-journal-text"></i>
+                                <span>Gestion De Cursos</span>
+                            </a>
+                        </li>
+                        <li>
+
                             <li>
-                                <a href="/Administrador/CrearAsignatura">
+                                <a href="CAsignatura">
                                     <i class="bi bi-journals"></i>
                                     <span>Crear Asignatura</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/Administrador/novedades">
+                                <a href="novedades">
                                     <i class="bi bi-journals"></i>
                                     <span>Novedades</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/Administrador/Calendario">
+                                <a href="calendario">
                                     <i class="bi bi-journals"></i>
                                     <span>Calendario</span>
                                 </a>
@@ -105,7 +108,7 @@
                     <hr>
                     <ul class="nav nav-pills">
                         <li>
-                            <a href="/Administrador/CerrarSesion">
+                            <a href="CerrarSesion">
                                 <i class="bi bi-box-arrow-in-left"></i>
                                 <span>Cerrar Sesion</span>
                             </a>

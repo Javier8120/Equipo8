@@ -27,7 +27,7 @@ def Login():
                 flash("Credenciales incorrectas", category="error")
         else:
             flash("Credenciales incorrectas", category="error")
-
+    
     return render('Autentificacion/login.html', **context)
 
 
