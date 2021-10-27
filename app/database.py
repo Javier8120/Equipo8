@@ -30,12 +30,30 @@ class User(db.Model):
         return check_password_hash(self.password, password)
 
 class Docente(db.Model):
-    __tablename__ = 'Docente'
+    __tablename__ = 'Docentes'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
-    usuario = db.relationship('User', backref=db.backref('Docente', lazy=True))
+    usuario = db.relationship('User', backref=db.backref('Docentes', lazy=True))
 class Estudiante(db.Model):
-    __tablename__ = 'Estudiante'
+    __tablename__ = 'Estudiantes'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
-    usuario = db.relationship('User', backref=db.backref('Estudiante', lazy=True))
+    usuario = db.relationship('User', backref=db.backref('Estudiantes', lazy=True))
+
+
+class Curso(db.Model):
+    __tablename__ = "Cursos"
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(50), nullable=False)
+
+class Asignatura(db.Model):
+    __tablename__="Asignaturas"
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100), nullable=False)
+    is_Public = db.Column(db.Boolean, default=False)
+    curso_id = db.Column(db.Integer, db.ForeignKey('Cursos.id', ondelete='CASCADE'), nullable=False)
+    curso = db.relationship('Cursos', backref=db.backref('Asignaturas', lazy=True))
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
+    usuario = db.relationship('User', backref=db.backref('Asignaturas', lazy=True))
+
+     

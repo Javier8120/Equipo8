@@ -1,9 +1,9 @@
 from flask import render_template as render, flash, redirect, url_for
-from flask_login import  login_user, logout_user, login_required
+import flask
+from flask_login import  logout_user, login_required
 from . import Administrador
-from app.modelo import UserModel
 from .formularios import  RegistrarUsuario
-from app.servicios import get_user_by_username, registro_usuarios
+from app.servicios import get_user_by_username, get_user_by_email, registro_usuarios
 
 
 
@@ -24,11 +24,14 @@ def CrearUsuarios():
     register_form = RegistrarUsuario()
     context = {
         'register_form': register_form
+    
     }
+    validar=False
     if register_form.validate_on_submit():
         user = get_user_by_username(register_form.username.data)
-        if user is None:
-        #Proceso para registrar usuario :V
+        Email = get_user_by_email(register_form.email.data)
+        if user is None and Email is None: 
+                    #Proceso para registrar usuario :V
                 user_data = {
                     'Rol':register_form.Rol.data,  
                     'nombre':register_form.nombre.data,
@@ -38,18 +41,22 @@ def CrearUsuarios():
                     'username':register_form.username.data,    
                     'password':register_form.password.data,  
                 }
-
+                validar=True
                 registro_usuarios(user_data)
-                user_model = UserModel(
-                get_user_by_username(register_form.username.data)
-                )   
-                login_user(user_model)
                 flash("Usuario Registrado Correctamente", category="info")
-                return redirect(url_for("Administrador.CrearUsuarios")) 
-                
+                return redirect(url_for("Administrador.CrearUsuarios"))     
         else:
-            flash("ya existe este USUARIO en el sistema", category="warning")
-        
+            
+            if validar==False and Email is not None:
+                flash("El correo digitado ya se encuentra registrado", category="warning")
+            elif validar==False and user is not None:
+                flash("El usuario digitado ya se encuentra registrado", category="warning")
+            #elif validar==False:
+             #   flash("Tanto el Correo como el usuario digitado se encuentran registrados", category="warning")
+            
+            
+
+
             
 
     return render('Administrador/CrearUsuarios.html', **context)
