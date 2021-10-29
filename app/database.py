@@ -52,7 +52,7 @@ class Asignatura(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     is_Public = db.Column(db.Boolean, default=False)
     curso_id = db.Column(db.Integer, db.ForeignKey('Cursos.id', ondelete='CASCADE'), nullable=False)
-    curso = db.relationship('Cursos', backref=db.backref('Asignaturas', lazy=True))
+    curso = db.relationship('Curso', backref=db.backref('Asignaturas', lazy=True))
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
     usuario = db.relationship('User', backref=db.backref('Asignaturas', lazy=True))
 

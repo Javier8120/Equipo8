@@ -6,8 +6,14 @@ from marshmallow_sqlalchemy.schema import load_instance_mixin
 from .database  import *
 
 
-class cursoSchema(SQLAlchemyAutoSchema):
+class CursoSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Curso
-        fields = ('id','nombre')
+        fields = ('id','nombre',)
         load_instance = True
+""" 
+class UserSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Curso
+        fields = ('id','nombre',)
+        load_instance = True """

@@ -2,8 +2,8 @@ from flask import render_template as render, flash, redirect, url_for
 import flask
 from flask_login import  logout_user, login_required
 from . import Administrador
-from .formularios import  RegistrarUsuario
-from app.servicios import get_user_by_username, get_user_by_email, registro_usuarios
+from .formularios import  RegistrarUsuario, RegistroCursoForm, EliminarCursoForm  # renderear de formularios V:
+from app.servicios import get_user_by_username, get_user_by_email, registro_usuarios, get_curso_by_id, eliminar_curso, lista_cursos, crear_curso
 
 
 
@@ -24,7 +24,6 @@ def CrearUsuarios():
     register_form = RegistrarUsuario()
     context = {
         'register_form': register_form
-    
     }
     validar=False
     if register_form.validate_on_submit():
@@ -54,24 +53,41 @@ def CrearUsuarios():
             #elif validar==False:
              #   flash("Tanto el Correo como el usuario digitado se encuentran registrados", category="warning")
             
-            
-
-
-            
-
     return render('Administrador/CrearUsuarios.html', **context)
-
-
 
 @Administrador.route('VerUsuarios', methods = ['GET', 'POST'])
 @login_required
 def VerUsuarios():
     return render('Administrador/Gcursos.html')
 
-@Administrador.route('/GestionCursos', methods = ['GET', 'POST'])
+@Administrador.route('/GestionCursos' , methods=['GET', 'POST'])
 @login_required
 def Gcursos():
-    return render('Administrador/Gcursos.html')
+    cursos = lista_cursos()
+    registrarcurso_form = RegistroCursoForm()
+    context ={
+        'registrarcurso_form': registrarcurso_form,
+        'eliminar_curso': EliminarCursoForm(),
+        'cursos':  cursos
+    }
+
+    if registrarcurso_form.validate_on_submit():
+        pass
+    
+    return render('Administrador/Gcursos.html' **context)
+
+
+@Administrador.route('/Curso/eliminar/<curso_id>' , methods=['POST'])
+@login_required
+def Administrador_eliminar_curso_vista(curso_id):
+    eliminar_curso(curso_id)
+    flash("Curso Eliminado", curso="success")
+    return redirect(url_for('Admistrador.Gcursos'))
+
+
+
+
+
 
 @Administrador.route('/CAsignatura', methods = ['GET', 'POST'])
 @login_required
