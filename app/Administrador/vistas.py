@@ -2,8 +2,8 @@ from flask import render_template as render, flash, redirect, url_for
 import flask
 from flask_login import  logout_user, login_required
 from . import Administrador
-from .formularios import  RegistrarUsuario, RegistroCursoForm, EliminarCursoForm  # renderear de formularios V:
-from app.servicios import get_user_by_username, get_user_by_email, registro_usuarios, get_curso_by_id, eliminar_curso, lista_cursos, crear_curso
+from .formularios import  *
+from app.servicios import *
 
 
 
@@ -60,30 +60,33 @@ def CrearUsuarios():
 def VerUsuarios():
     return render('Administrador/Gcursos.html')
 
-@Administrador.route('/GestionCursos' , methods=['GET', 'POST'])
+
+@Administrador.route('/cursos', methods=['GET', 'POST'])
 @login_required
-def Gcursos():
-    cursos = lista_cursos()
-    registrarcurso_form = RegistroCursoForm()
-    context ={
-        'registrarcurso_form': registrarcurso_form,
-        'eliminar_curso': EliminarCursoForm(),
-        'cursos':  cursos
+def cursos():
+    cursos = list_cursos()
+    register_form = RegisterCursoForm()
+    context = {
+        'register_form': register_form,
+        'delete_form': DeleteCursoForm(),
+        'cursos': cursos
     }
 
-    if registrarcurso_form.validate_on_submit():
-        pass
-    
-    return render('Administrador/Gcursos.html' **context)
+    if register_form.validate_on_submit():
+        create_curso(register_form.name.data)
+        flash("Curso registrao exitosamente.", category="success")
 
+        return redirect(url_for('Administrador.cursos'))        
 
-@Administrador.route('/Curso/eliminar/<curso_id>' , methods=['POST'])
+    return render('Administrador/cursos.html', **context)
+
+@Administrador.route('/curso/delete/<curso_id>', methods=['POST'])
 @login_required
-def Administrador_eliminar_curso_vista(curso_id):
-    eliminar_curso(curso_id)
-    flash("Curso Eliminado", curso="success")
-    return redirect(url_for('Admistrador.Gcursos'))
+def delete_curso_view(curso_id):
+    delete_curso(curso_id)
+    flash("Curso eliminado", category="success")   
 
+    return redirect(url_for('Administrador.cursos')) 
 
 
 

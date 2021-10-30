@@ -31,33 +31,28 @@ def registro_usuarios(user_data):
 
 """Consultar , crear y eliminar Cursos"""
 
-#Metodo para buscar el curso por Id
-def get_curso_by_id(curso_id):
+def get_Curso_by_id(curso_id):
+    """ Método para busar curso por id. """
     return Curso.query.get(curso_id)
+def get_Rol_by_Rol(Rol):
+    """ Método para obtener el Rol """
+    return User.query.filter_by(Rol=Rol).first()
 
-#Metodo para Crear Curso :v
-def crear_curso(nombre):
-    curso = Curso(nombre=nombre)
-    db.session.add(curso)
-    db.session.commit()
-
-#Metodo para eliminar 
-def eliminar_curso(curso_id):
-    curso = get_curso_by_id(curso_id)
+def delete_curso(curso_id):
+    curso = get_Curso_by_id(curso_id)
     db.session.delete(curso)
     db.session.commit()
 
-#Metodo para obtener el listado de Cursos disponibles :V (Utilizando la instanciacion que esta en serializer.py)
-def lista_cursos():
+def create_curso(name):
+    """ Método para crear una curso. """
+    curso = Curso(name=name)
+    db.session.add(curso)
+    db.session.commit()
+
+def list_cursos():
+    """ Método para obtener el listado de cursos. """
     schema = CursoSchema()
-    data = Curso.query.all()  # Obtener todos los datos de la tabla Cursos
-    cursos =[schema.dump(c) for c in data]  # Convertirlas de objetos independientes a diccionarios o.o
+    data = Curso.query.all()
+    cursos = [schema.dump(c) for c in data]
+
     return cursos
-
-
-
-""" def lista_usuarios():
-    schema = UserSchema()
-    data = User.query.all()  # Obtener todos los datos de la tabla Cursos
-    Usuarios =[schema.dump(c) for c in data]  # Convertirlas de objetos independientes a diccionarios o.o
-    return Usuarios """

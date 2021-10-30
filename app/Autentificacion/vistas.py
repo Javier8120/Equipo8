@@ -1,5 +1,5 @@
 from flask import render_template as render, flash, redirect, url_for
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user
 from . import Autentificacion
 from app.modelo import UserModel
 from .formularios import LoginForm
@@ -13,7 +13,6 @@ def Login():
     context = {
         'login_form': login_form
     }
-
 # Verifiquemos el metodo del boton enviar (submit)
     if login_form.validate_on_submit():
         user = get_user_by_username(login_form.username.data)
@@ -31,6 +30,3 @@ def Login():
     return render('Autentificacion/login.html', **context)
 
 
-@Autentificacion.route('/Login2', methods=['GET', 'POST'])
-def login2():
-    return render('Autentificacion/Login2.html')

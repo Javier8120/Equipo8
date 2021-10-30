@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 
 class RegistrarUsuario(FlaskForm):
-    Rol= SelectField('Selecione Rol', choices=[('1','Administrador'),('2','Docente'), ('3','Estudiante')])
+    Rol= SelectField('Selecione Rol', choices=[(1,'Administrador'),(2,'Docente'), (3,'Estudiante')])
     nombre = StringField("Nombre", validators=[DataRequired(), Length(min=3, max=20, message="El nombre debe tener entre 3 y 20 caracteres")])
     apellido = StringField("Apellido", validators=[DataRequired(), Length(min=3, max=20, message="El o los apellidos deben tener entre 2 y 20 caracteres")])
     email  = EmailField("Correo", validators=[DataRequired(), Email(), Length(min=5, max=40, message="El correo debe tener entre 5 y 40 caracteres")])
@@ -21,10 +21,14 @@ class RegistrarUsuario(FlaskForm):
   
 
 
-# Formulario para eliminar Cursos
-class EliminarCursoForm():
-    submit = SubmitField("Eliminar Curso")
 
-# Formulario para registrar cursos
-class RegistroCursoForm():
-    name = StringField("Curso", validators=[DataRequired(), Length(min=2, max=30, message="Este campo debe contener de 2 a 30 caracteres")])
+class DeleteCursoForm(FlaskForm):
+    """ Form eliminar Cursos. """
+    submit = SubmitField("Eliminar")
+
+class RegisterCursoForm(FlaskForm):
+    """ Form para registrar curso. """
+    name = StringField("Curso", validators=[DataRequired(), Length(min=2, max=30)])
+    #name2  = StringField("Docente", validators=[DataRequired(), Length(min=2, max=30)])
+
+    submit = SubmitField("Registrar")

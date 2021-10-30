@@ -1,9 +1,6 @@
-from flask.helpers import flash
-from flask.signals import message_flashed
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, EqualTo, Length
-
+from wtforms.validators import DataRequired, Length
 
 
 class LoginForm(FlaskForm):

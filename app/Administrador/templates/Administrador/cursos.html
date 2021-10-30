@@ -1,12 +1,13 @@
-{% extends 'layoutS.html' %} {% block title %} {{ super() }} Gestionar Cursos {% endblock %} {% block style %} {{ super() }} {% endblock %} {% import 'bootstrap/wtf.html' as wtf %} {% block contenido %} {% block contenido2 %} {% block content %}
+{% extends 'layoutS.html' %} {% block title %} {{ super() }} Gestionar Cursos {% endblock %} {% block style %} {{ super() }} {% endblock %} {% import 'bootstrap/wtf.html' as wtf %}{% import 'macros/macroListCategory.html' as macroCurso %} {% block contenido
+%} {% block contenido2 %} {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-4">
             <h4>Registrar Cursos</h4>
-            {{ wtf.quick_form(registrarcurso_form, button_map={'submit': 'primary'}) }}
+            {{ wtf.quick_form(register_form, button_map={'submit': 'primary'}) }}
         </div>
         <div class="col-md-8">
-            <h4>Listado de cursos</h4>
+            <h4>Listado de Cursos</h4>
             <div class="container table-responsive">
                 <table class="table">
                     <thead>
@@ -16,11 +17,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for curso in cursos %} {{ macroCategory.render_list(category, delete_form) }} {% endfor %}
+                        {% for curso in cursos %} {{ macroCurso.render_list(curso, delete_form) }} {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %} {% endblock %} {% endblock %}

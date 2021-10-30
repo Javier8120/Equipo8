@@ -10,7 +10,7 @@ class User(db.Model):
     __tablename__ = 'Users'
 
     id = db.Column(db.Integer, primary_key=True)
-    Rol = db.Column(db.String, nullable=False)
+    Rol = db.Column(db.Integer, nullable=False)
     nombre = db.Column(db.String(80), nullable=False)
     apeliido = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -41,19 +41,23 @@ class Estudiante(db.Model):
     usuario = db.relationship('User', backref=db.backref('Estudiantes', lazy=True))
 
 
+
 class Curso(db.Model):
-    __tablename__ = "Cursos"
+    __tablename__ = 'cursos'
+    
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+
 
 class Asignatura(db.Model):
-    __tablename__="Asignaturas"
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(100), nullable=False)
-    is_Public = db.Column(db.Boolean, default=False)
-    curso_id = db.Column(db.Integer, db.ForeignKey('Cursos.id', ondelete='CASCADE'), nullable=False)
-    curso = db.relationship('Curso', backref=db.backref('Asignaturas', lazy=True))
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
-    usuario = db.relationship('User', backref=db.backref('Asignaturas', lazy=True))
+    __tablename__ = 'asignaturas'
 
-     
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    is_public = db.Column(db.Boolean, default=False)
+    curso_id = db.Column(db.Integer, db.ForeignKey('cursos.id', ondelete='CASCADE'), nullable=False)
+    curso = db.relationship('Curso', backref=db.backref('asignaturas', lazy=True))
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete='CASCADE'), nullable=False)
+    user = db.relationship('User', backref=db.backref('asignaturas', lazy=True))
+
