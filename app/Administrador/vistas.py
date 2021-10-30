@@ -1,5 +1,4 @@
 from flask import render_template as render, flash, redirect, url_for
-import flask
 from flask_login import  logout_user, login_required
 from . import Administrador
 from .formularios import  *
@@ -58,7 +57,7 @@ def CrearUsuarios():
 @Administrador.route('VerUsuarios', methods = ['GET', 'POST'])
 @login_required
 def VerUsuarios():
-    return render('Administrador/Gcursos.html')
+    return render('Administrador/CAsignatura.html')
 
 
 @Administrador.route('/cursos', methods=['GET', 'POST'])
@@ -87,9 +86,6 @@ def delete_curso_view(curso_id):
     flash("Curso eliminado", category="success")   
 
     return redirect(url_for('Administrador.cursos')) 
-
-
-
 
 
 @Administrador.route('/CAsignatura', methods = ['GET', 'POST'])
