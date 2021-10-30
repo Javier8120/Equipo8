@@ -1,0 +1,54 @@
+.Cuadro{
+    width: 75%;
+	height:83%;
+		position: fixed;
+		bottom: 5%; right: 3%;
+        background-color: rgb(221, 219, 219);
+        text-align:center;
+        border-radius: 20px;
+}
+
+.bloque-2{
+    width: 10%;
+	height:16%;
+		position: fixed;
+		top: 20%; right:37%;
+
+	background: #ffffff;
+}
+
+.circulo{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    left: 0%;
+}
+.imagen{
+    width: 115%;
+    height: 115%;
+    border-radius: 100%;
+}
+
+
+.p{
+    text-align: left;
+    padding-left: 9%;
+    font: 189% sans-serif;
+        position: fixed;
+        bottom: 13%;
+}
+
+
+.button{
+
+    background: #45A643;
+    color: rgb(204, 202, 202);
+    display: inline-block;
+    font-size: 1.15em;
+    margin:15px;
+    padding: 5px 0px;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+}

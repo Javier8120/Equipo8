@@ -1,0 +1,41 @@
+{% extends 'layoutD.html' %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calificar.css' ) }}"> 
+<div class="cuadro">
+    <ul>
+        <h3>Actividad 1</h3>
+    </ul>
+    <div class="cuadro2">
+        <div class="bloque-1">
+            <div class="p">
+                <a href="#" class=button>Actividad 1 </a>
+            </div>  
+        </div>
+        <div class="bloque-2">
+            <div class="p2">
+                <p>Estudiante: Alvaro Lopez</p>
+                <p>Clase: 2A</p>
+            </div>
+        </div>   
+        <div class="bloque-3">
+            <div class="p3">
+                <a href="#" class=button2>Subir Comentario </a>
+            </div>
+        </div>
+        <div class="bloque-4">
+            <div class="circulo">
+                <div class="posicion">
+                    <img src="\static\img\mystery-Man-Soompi.jpg" class="imagen">
+                </div>
+            </div>
+        </div>
+        <div class="bloque-5">
+            <div class="p3">
+                <a href="#" class=button2>Subir Nota </a>
+            </div>
+        </div> 
+    </div>
+</div>
+
+{% endblock %}

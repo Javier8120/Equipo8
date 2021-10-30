@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <!--Css-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/CssLayout.css' ) }}"> 
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/CssLayout.css' ) }}">
+
     <!--Css BootStrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Iconos BoootStrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    
-    
+
+
     <title>Docente | IMPERIUM</title>
-  </head>
-  <body>
-  <main>
-    <div>
-    <header class="header">
-		<div class="container">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a href="/Docente/Calendario" class=icon-campana>
-              <i class="bi bi-bell-fill"></i>
-            </a>
-          </li>
-          <li class=nav-item> 
-            <a>Carrascal Frutiño</a> 
-          </li>
-          <li class=nav-item>
-            <a>
-              <i class="bi bi-person-circle"></i>
-            </a>
-          </li>
-        </ul>
-	</header>
-    </div>
-    {% block contenido %}
+</head>
 
-    {% endblock %}
-<!--	--------------->
+<body>
+    <main>
+        <div>
+            <header class="header">
+                <div class="container">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a href="#" class=icon-campana>
+                                <i class="bi bi-bell-fill"></i>
+                            </a>
+                        </li>
+                        <li class=nav-item>
+                            <a>Carrascal Frutiño</a>
+                        </li>
+                        <li class=nav-item>
+                            <a>
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        </li>
+                    </ul>
+            </header>
+            </div>
+            {% block contenido %} {% endblock %}
+            <!--	--------------->
 
-<div class="contenedor-menu">
-	<div class="conte-menu text-white" >
-    <nav >
-      <a>
-      <i class="bi bi-bullseye"></i>
-      <span>Docente</span>
-     </a>
-  <hr>
-     <ul class="nav nav-pills">  
-      <li>
-        <a title="Perfil" href="/Docente/perfilD" >
-          <i class="bi bi-people-fill"></i>
-          <span>Area Personal</span>
-        </a>
-      </li>
-      <li>
-        <a title="Cursos que dicto"href="/Docente/cursod">
-          <i class="bi bi-journal-text"></i>
-          <span>Cursos</span>
-        </a>
-      </li>
-      <li>
-        <a href="/Docente/novedades">
-          <i class="bi bi-calendar3"></i>
-          <span>Novedades</span>
-        </a>
-      </li>
-      <li class="mb_1">
-            <a  title="Desplegable" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tarea-collapse" aria-expanded="false">
-              <i class="bi bi-journal-text"></i>
-              <span>Actividades</span>
-            </a>
-            <div class="collapse" id="tarea-collapse">         
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a class="dropdown-item" href="/Docente/Actividades/asignar" >Asignar</a></li>
-            <li><a class="dropdown-item" href="/Docente/Actividades/Calificar" > Calificar</a></li>
-          </ul>
-        </div>  
-      </li>
-    </ul>
-      <hr>
-      <ul  class="nav nav-pills">  
-      <li>
-        <a href="/Login">
-          <i class="bi bi-box-arrow-in-left"></i>
-          <span>Cerrar Sesion</span>
-        </a>
-      </li>
-      </ul>
-   </nav>      
-</div> 
-  </div>
-  
-  <div class="divider"></div>
-</main>
+            <div class="contenedor-menu">
+                <div class="conte-menu text-white">
+                    <nav>
+                        <a>
+                            <i class="bi bi-bullseye"></i>
+                            <span>Docente</span>
+                        </a>
+                        <hr>
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a title="Perfil" href="perfil">
+                                    <i class="bi bi-people-fill"></i>
+                                    <span>Area Personal</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a title="Cursos que dicto" href="CursoD">
+                                    <i class="bi bi-journal-text"></i>
+                                    <span>Cursos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="bi bi-calendar3"></i>
+                                    <span>Novedades</span>
+                                </a>
+                            </li>
+                            <li class="mb_1">
+                                <a title="Desplegable" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tarea-collapse" aria-expanded="false">
+                                    <i class="bi bi-journal-text"></i>
+                                    <span>Actividades</span>
+                                </a>
+                                <div class="collapse" id="tarea-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a class="dropdown-item" href="asignar">Asignar</a></li>
+                                        <li><a class="dropdown-item" href="Calificar"> Calificar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="CerrarSesion">
+                                    <i class="bi bi-box-arrow-in-left"></i>
+                                    <span>Cerrar Sesion</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
-<!-- Optional JavaScript; choose one of the two! BootStrap-->
+            <div class="divider"></div>
+    </main>
+
+    <!-- Optional JavaScript; choose one of the two! BootStrap-->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -113,4 +113,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 </body>
+
 </html>

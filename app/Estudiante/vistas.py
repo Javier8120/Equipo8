@@ -24,7 +24,7 @@ def matricular():
 
 @Estudiante.route('/materias', methods=['GET', 'POST'])
 @login_required
-def MisMaterias():
+def materias():
    
   return render('Estudiante/materias.html')
 
@@ -56,4 +56,4 @@ def CerrarSesion():
     flash('Sesion Cerrada', category="info")
     return redirect(url_for('Autentificacion.Login'))
 
-  
+    

@@ -1,0 +1,90 @@
+.marco8 {
+    /* Rectangle 20 */
+    position: fixed;
+    width: 1099px;
+    height: 597px;
+    left: 270px;
+    top: 66px;
+    /*background: #E55D87;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #5FC3E4, #E55D87); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 1px solid #FFFF(255, 255, 255, 0.38);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.marco10 {
+    height: 30vh;
+    width: 20vw;
+    text-align: center;
+    position: absolute;
+}
+
+
+/* VISUALIZAR USUARIO CSS */
+
+.marco11 {
+    /* Rectangle 20 */
+    position: fixed;
+    width: 1099px;
+    height: 1200px;
+    left: 270px;
+    top: 66px;
+    /*background: #E55D87;
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #5FC3E4, #E55D87);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 1px solid #FFFF(255, 255, 255, 0.38);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.marco12 {
+    /* Rectangle 20 */
+    position: fixed;
+    width: 1099px;
+    height: 596px;
+    left: 270px;
+    top: 66px;
+    /*background: #E55D87;
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #5FC3E4, #E55D87);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 1px solid #FFFF(255, 255, 255, 0.38);
+    box-sizing: border-box;
+}
+
+
+/*VISUALIZAR USUARIOS CSS*/
+
+.Formulario3 {
+    margin-top: 10px;
+    margin-left: 340px;
+}
+
+.Formulario4 {
+    margin-top: 60px;
+    margin-left: 55px;
+}
+
+
+/*CREAR ASIGNATURA CSS*/
+
+.row {
+    margin-left: 350px;
+    margin-top: auto;
+}
+
+.Formulario1 {
+    margin-top: 10px;
+    margin-right: 500px;
+    position: absolute;
+}
+
+.Formulario2 {
+    margin-top: 10px;
+}

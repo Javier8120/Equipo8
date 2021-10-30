@@ -1,0 +1,40 @@
+{% extends 'layoutD.html' %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/AsignarMateria.css' ) }}"> 
+    <div class=cuadro>
+        <p>Actividades</p>
+        <div class="campoactividades">
+            <div class="bloque-1">
+                <div class="p">
+                    <a href="#" class=button>Subir archivo </a>
+                </div>  
+            </div>
+            <div class="bloque-2">
+                    <p>Clase 1A</p>
+                </div>
+            </div>
+            <div class="bloque-3">
+                    <p>Clase 2B</p>
+                </div>
+            </div>
+            <div class="bloque-4">
+                <div class="p2">
+                    <p>Clase 3A</p>
+                </div>
+            </div>
+            <div class="bloque-5">
+                <div class="p3">
+                    <a href="#" class=button2>Seleccionar Clases </a>
+                </div>    
+            </div>
+            <div class="bloque-6">
+                <div class="p3">
+                    <a href="#" class=button2>Subir actividad </a>
+                </div>
+            </div>
+         </div>
+
+    </div>
+
+{% endblock %}

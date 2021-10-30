@@ -1,0 +1,107 @@
+.cuadro{
+    width: 75%;
+	height:83%;
+		position: fixed;
+		bottom: 5%; right: 3%;
+        background-color: rgb(255, 255, 255);
+        text-align:center;
+        font: 150% sans-serif;
+}
+.campoactividades{
+    width: 75%;
+	height:75%;
+    position: fixed;
+		bottom: 5%; right: 3%;
+        background-color: rgb(231, 230, 230);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        box-sizing: border-box;
+}
+.bloque-1{
+    width: 30%;
+	height:40%;
+		position: fixed;
+		top: 23%; left:26%;
+
+	background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+
+}
+.button{
+    color:black;
+}
+.p{
+    text-align:center; 
+    font: 150% sans-serif;
+        position: fixed;
+        top: 37%; left:35%;
+}
+.bloque-2{
+    width: 30%;
+	height:7%;
+		position: fixed;
+		top: 27%; right:8%;
+
+	background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+}
+
+.bloque-3{
+    width: 30%;
+	height:8%;
+		position: fixed;
+		top: 40%; right:8%;
+
+	background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+}
+
+.bloque-4{
+    width: 30%;
+	height:8%;
+		position: fixed;
+		top: 55%; right:8%;
+
+	background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+
+}
+
+.button2{
+
+    background: #0659FF;
+    color: rgb(204, 202, 202);
+    display: inline-block;
+    font-size: 1.20em;
+    margin:15px;
+    padding: 5px 0px;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.bloque-5{
+    width: 30%;
+	height:8%;
+		position: fixed;
+		top: 70%; right:0%;
+
+}
+.bloque-6{
+    width: 30%;
+	height:8%;
+		position: fixed;
+		top: 70%; left:34%;
+}
+.p2{
+    text-align: center;
+    font: 150% sans-serif;
+}
+.p3{
+    right:5%;
+}

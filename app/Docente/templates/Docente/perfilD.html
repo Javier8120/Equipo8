@@ -1,0 +1,31 @@
+{% extends 'layoutD.html' %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfilD.css' ) }}"> 
+<section>
+    <div class=Cuadro>
+        <ul>
+            <h3>Información Personal</h3>
+        </ul>
+        <div class="bloque-2">
+            <div class="circulo">
+                <div class="posicion">
+                    <img src="\static\img\ImagenProfesor.jpg" class="imagen">
+                </div>
+            </div>
+        </div>
+    <div class=p>
+        <p>Nombre Completo: Jairo Armando Hernandez Rodriguez</p>
+        <p>Correo electrónico: jhernandeza@gmail.com</p>
+        <p>Rol: Docente</p>
+        <p>Número: 3019273435</p>
+        <p>Contraseña: **********</p>
+        <p>Id: 1089376234 </p>
+    <div class="p2">
+            <a href="#" class=button>Editar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

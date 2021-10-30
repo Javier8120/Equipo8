@@ -1,1 +1,59 @@
-{% extends 'layoutS.html' %} {% block title %} {{ super() }} Crear Asignatura {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %} {% endblock %} {% endblock %}
+{% extends 'layoutS.html' %} {% block title %} {{ super() }} Crear Asignatura {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+<!--<div class="marco8"></div>-->
+<!--
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+-->
+<div class="marco8">
+    <div class="marco9">
+
+        {% with messages=get_flashed_messages () %} {% if messages %} {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <div class="row">
+            <div class="Formulario1">
+                <form action="/Administrador/CAsignatura" method="post">
+
+                    <input type="text" name="Nombre_Completo" placeholder="Nombre de la Asignatura">
+
+                    <button type="submit">
+                    Crear
+                </button>
+                </form>
+            </div>
+
+            <div class="Formulario2">
+                <table>
+                    <table class="marco10 table-striped table-bordered bg-white table-sm ">
+                        <thead>
+                            <tr>
+                                <td>Nombre Asignatura</td>
+                                <td>Codigo</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for contacto in contactos %}
+                            <tr>
+                                <td>{{ contacto.0 }}</td>
+                                <td>{{ contacto.1 }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </table>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %} {% endblock %} {% endblock %}

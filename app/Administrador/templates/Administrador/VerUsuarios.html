@@ -1,1 +1,49 @@
-{% extends 'layoutS.html' %} {% block title %} {{ super() }} Ver Users {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %} {% endblock %} {% endblock %}
+{% extends 'layoutS.html' %} {% block title %} {{ super() }} Ver Users {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+
+<div class="marco11">
+    {% with messages=get_flashed_messages () %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <div class="Formulario3">
+        <table class="marco10 table-striped table-bordered bg-white table-sm ">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>ROL</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Correo</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for hola in holas %}
+                <tr>
+                    <td>{{ hola.0 }}</td>
+                    <td>{{ hola.1 }}</td>
+                    <td>{{ hola.2 }}</td>
+                    <td>{{ hola.3 }}</td>
+                    <td>{{ hola.4 }}</td>
+                    <td>
+                        <a href="/editar/{{hola.0}}">Editar</a>
+                        <a href="/eliminar/{{hola.0}}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </table>
+    </div>
+
+
+
+</div>
+
+
+{% endblock %} {% endblock %}{% endblock %}

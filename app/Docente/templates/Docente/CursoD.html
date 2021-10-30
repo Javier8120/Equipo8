@@ -1,0 +1,29 @@
+{% extends 'layoutD.html' %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/CursoD.css' ) }}"> 
+    <div class="cuadro">
+        <h3>Cursos:</h3>
+    <div class="bloque-1">
+        <div class="p">
+            <a href="#" class=button>Clase 1A</a>
+        </div>
+    </div>
+    <div class="bloque-2">
+        <div class="p2">
+            <a href="#" class=button>Clase 2A</a>
+        </div>
+    </div>
+    <div class="bloque-3">
+        <div class="p3">
+            <a href="#" class=button>Clase 2B</a>
+        </div>
+    </div>
+    <div class="bloque-4">
+        <div class="p4">
+            <a href="#" class=button>Clase 3A</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

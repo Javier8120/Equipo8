@@ -1,0 +1,74 @@
+.cuadro{
+    width: 75%;
+	height:83%;
+		position: fixed;
+		top: 15%; right:2%;
+        background-color: rgb(255, 255, 255);
+}
+.bloque-1{
+    width: 75%;
+	height:10%;
+		position: fixed;
+		top: 23%; left:23%;
+
+	background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+
+}
+.p{
+    text-align:center; 
+    font: 200% sans-serif;
+        position: fixed;
+        top: 25%; left:24%;
+}
+.bloque-2{
+    width: 75%;
+	height:10%;
+		position: fixed;
+		top: 43%; left:23%;
+    background: #FBFCFF;
+	border: 1px solid rgba(0, 0, 0, 0.38);
+	box-sizing: border-box;
+}
+
+.p2{
+    text-align:center; 
+    font: 200% sans-serif;
+        position: fixed;
+        top: 45%; left:24%;
+}
+.bloque-3{
+    width: 75%;
+	height:10%;
+		position: fixed;
+		top: 63%; left:23%;
+        background: #FBFCFF;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        box-sizing: border-box;
+}
+.p3{
+    text-align:center; 
+    font: 200% sans-serif;
+        position: fixed;
+        top: 65%; left:24%;
+}
+.bloque-4{
+    width: 75%;
+	height:10%;
+		position: fixed;
+		top: 83%; left:23%;
+        background: #FBFCFF;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        box-sizing: border-box;
+}
+.p4{
+    text-align:center; 
+    font: 200% sans-serif;
+        position: fixed;
+        top: 85%; left:24%;
+        
+}
+.button{
+    color: black;
+}

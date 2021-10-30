@@ -1,0 +1,35 @@
+{% extends 'layoutS.html' %} {% block title %} {{ super() }} Ver Users {% endblock %} {% block style %} {{ super() }} {% endblock %} {% block contenido %} {% block contenido2 %} {% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+
+<div class="marco12">
+    <div class="marco13">
+
+        {% with messages=get_flashed_messages () %} {% if messages %} {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <div class="row1">
+            <div class="Formulario4">
+                <form action="/actualizar/{{contactos1.0}}" method="post">
+
+                    <input type="text" name="ROL" placeholder="Rol" value="{{contactos1.1}}">
+                    <input type="text" name="Nombre" placeholder="Nombre" value="{{contactos1.2}}">
+                    <input type="text" name="Apellido" placeholder="Apellido" value="{{contactos1.3}}">
+                    <input type="text" name="Correo" placeholder="Correo Electronico" value="{{contactos1.4}}">
+                    <button type="submit">
+        Actualizar
+    </button>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+{% endblock %} {% endblock %}{% endblock %}
